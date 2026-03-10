@@ -1,7 +1,16 @@
 #!/bin/bash
-echo "Starting app..."
+
+echo "=== Starting Node.js app ==="
 cd /var/www/myapp
-pm2 start app.js --name myapp    # ← change app.js to your entry file
+
+# Delete existing pm2 process if exists
+pm2 delete myapp 2>/dev/null || true
+
+# Start fresh
+pm2 start app.js --name myapp
+
+# Save pm2 process list
 pm2 save
-pm2 startup
-echo "App started."
+
+echo "=== App started successfully ==="
+pm2 status
