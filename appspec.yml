@@ -1,10 +1,10 @@
-# appspec.yml
 version: 0.0
 os: linux
 
 files:
-  - source: /          # copies all your code
-    destination: /var/www/myapp   # where on EC2 to put it
+  - source: /
+    destination: /var/www/myapp
+    overwrite: true
 
 hooks:
   BeforeInstall:

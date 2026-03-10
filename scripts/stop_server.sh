@@ -1,3 +1,5 @@
-# scripts/stop_server.sh
 #!/bin/bash
-pm2 stop all || true   # for Node.js; adjust for your stack
+echo "Stopping existing app..."
+pm2 stop myapp || true
+pm2 delete myapp || true
+echo "App stopped."

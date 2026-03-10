@@ -1,4 +1,5 @@
-# scripts/install_dependencies.sh
 #!/bin/bash
+echo "Installing dependencies..."
 cd /var/www/myapp
-npm install   # or pip install, composer install, etc.
+npm install --production
+echo "Dependencies installed."
